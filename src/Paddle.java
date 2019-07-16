@@ -6,7 +6,7 @@ import java.awt.event.KeyEvent;
 public class Paddle {
 	public int paddleX = 0;
 	public int paddleY = 0;
-	public int paddleW = 100;
+	public int paddleW = 140;
 	public int paddleH = 20;
 	private boolean left = false;
 	private boolean right = false;
@@ -38,8 +38,8 @@ public class Paddle {
 			}
 		}
 		
-		player1Rec = new Rectangle(paddleX, paddleY, 100, 20);
-		player2Rec = new Rectangle(paddleX, paddleY, 100, 20);
+		player1Rec = new Rectangle(paddleX, paddleY, paddleW, paddleH);
+		player2Rec = new Rectangle(paddleX, paddleY, paddleW, paddleH);
 		
 		
 		if (Ball.ballY == 0) {

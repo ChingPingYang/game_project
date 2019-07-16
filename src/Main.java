@@ -1,9 +1,12 @@
-import java.awt.*;
 import javax.swing.*;
 public class Main {
 
 	public static JFrame frame;
 	public static Display display;
+
+	
+	
+	
 	public static void main(String[] args) {
 		frame = new JFrame();
 		display = new Display();
@@ -21,6 +24,11 @@ public class Main {
 		
 		display.start();
 		//start the game^
+		
+		
+		
 	}
-
+	
+	
+	
 }

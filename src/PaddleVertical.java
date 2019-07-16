@@ -7,7 +7,7 @@ public class PaddleVertical {
 	public int paddleX = 0;
 	public int paddleY = 0;
 	public int paddleW = 20;
-	public int paddleH = 100;
+	public int paddleH = 140;
 	private boolean up = false;
 	private boolean down = false;
 	private int player;
@@ -39,8 +39,8 @@ public class PaddleVertical {
 			}
 		}
 		
-		player3Rec = new Rectangle(paddleX, paddleY, 20, 100);
-		player4Rec = new Rectangle(paddleX, paddleY, 20, 100);
+		player3Rec = new Rectangle(paddleX, paddleY, paddleW, paddleH);
+		player4Rec = new Rectangle(paddleX, paddleY, paddleW, paddleH);
 		
 		if (Ball.ballX == 0) {
 			player3Switch = 0;

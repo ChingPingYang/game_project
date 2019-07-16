@@ -11,12 +11,16 @@ public class Display extends Canvas implements Runnable,KeyListener{
 	
 	//add Players
 	public Paddle player1 = new Paddle(50, 0, 1);
-	public Paddle player2 = new Paddle(150, 780, 2);
+	public Paddle player2 = new Paddle(550, 780, 2);
 	public PaddleVertical player3 = new PaddleVertical(0, 80, 3);
 	public PaddleVertical player4 = new PaddleVertical(780, 80, 4);
 	
 	//add Ball
 	public Ball ball = new Ball();
+	
+	//add Bricks
+	public Bricks bricks = new Bricks();
+	
 	
 	//Constructor
 	public Display() {
@@ -34,6 +38,20 @@ public class Display extends Canvas implements Runnable,KeyListener{
 		player2.updatePaddle();
 		player3.updatePaddle();
 		player4.updatePaddle();
+		
+		
+		for (int i = 0; i < bricks.bricks.length; i++) {
+			for (int j = 0; j < bricks.bricks[i].length; j++ ) {
+				if(bricks.bricks[i][j] != null) {
+					if (ball.ballRec.intersects(bricks.bricks[i][j])) {
+						ball.ballDirY = -(ball.ballDirY);
+						ball.ballDirX = -(ball.ballDirX);
+						bricks.bricks[i][j] = null;
+					}
+				}
+			}
+		}
+		
 		
 
 		if ((player1.player1Rec != null && ball.ballRec.intersects(player1.player1Rec)) || (player2.player2Rec != null && ball.ballRec.intersects(player2.player2Rec))) {
@@ -61,6 +79,7 @@ public class Display extends Canvas implements Runnable,KeyListener{
 		player2.drawPaddle(g);
 		player3.drawPaddle(g);
 		player4.drawPaddle(g);
+		bricks.drawBricks(g);
 		
 		
 		
